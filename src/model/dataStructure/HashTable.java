@@ -1,0 +1,101 @@
+package model.dataStructure;
+import model.dataStructure.dataStructureInterface.IHashTable;
+
+public class HashTable <K extends Comparable<K>,T> implements IHashTable<K ,T> {
+
+    public HashNode<K,T>[] listOfNodes;
+    public static int ARR_SIZE;
+
+    
+    public HashTable(int m) {
+        ARR_SIZE = m;
+        listOfNodes = new HashNode[m];
+    }
+
+
+
+    @Override
+    public void insert(K key, T value) {
+        int pos = key.hashCode()%ARR_SIZE;
+        if (listOfNodes[pos] == null) {
+            listOfNodes[pos] = new HashNode<K,T>(key, value);
+        } else {
+            HashNode<K,T> nodeToAdd = new HashNode<K,T>(key, value);
+            nodeToAdd.setNext(listOfNodes[pos]);
+            listOfNodes[pos].setPrev(nodeToAdd);
+            listOfNodes[pos] = nodeToAdd;
+        }
+    }
+
+
+
+    @Override
+    public boolean delete(K key) {
+        int pos = key.hashCode()%ARR_SIZE;
+        if (listOfNodes[pos].getKey().compareTo(key) == 0) {
+            deleteNode(listOfNodes[pos], key, pos);
+            return true;
+        } else {
+            return delete(listOfNodes[pos], key, pos);
+        }
+    }
+
+    private boolean delete(HashNode<K,T> current, K key, int pos){
+        if (current == null) return false ;
+        if (current.getKey().compareTo(key) == 0) {
+            deleteNode(current, key, pos);
+            return true;
+        }
+        return delete(current.getNext(), key, pos);
+    }
+
+    private void deleteNode(HashNode<K,T> current, K key, int pos){
+        if(current.getPrev() == null){
+            HashNode<K,T> next = current.getNext();
+            if (next != null) {
+                next.setPrev(null);
+                listOfNodes[pos] = next;
+            } else {
+                listOfNodes[pos] = null;
+            }
+            
+            return;
+        }
+        if(current.getNext() == null){
+            HashNode<K,T> prev = current.getPrev();
+            prev.setNext(null);
+            return;
+        }
+        //Delete
+        HashNode<K,T> prev = current.getPrev();
+        HashNode<K,T> next = current.getNext();
+        prev.setNext(next);
+        next.setPrev(prev);
+        return;
+    }
+
+
+
+    @Override
+    public T search(K key) {
+        int pos = key.hashCode()%ARR_SIZE;
+        if (listOfNodes[pos] != null) {
+            if (listOfNodes[pos].getKey().compareTo(key) == 0) {
+                return listOfNodes[pos].getValue();
+            } else {
+                return search(listOfNodes[pos], key);
+            }
+        }
+        return null;
+    }
+
+    private T search(HashNode<K,T> current, K key){
+        if (current == null) return null ;
+        if (current.getKey().compareTo(key) == 0) {
+            return current.getValue();
+        }
+        return search(current.getNext(), key);
+    }
+
+    
+}

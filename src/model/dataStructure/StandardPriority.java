@@ -1,8 +1,8 @@
 package model.dataStructure;
 
-public class standardPriority extends Priority implements Comparable{
+public class StandardPriority extends Priority implements Comparable{
 
-    public standardPriority(double punctuality, int distanceToCenter, int row, double overallPriority) {
+    public StandardPriority(double punctuality, int distanceToCenter, int row, double overallPriority) {
         super(punctuality, distanceToCenter, row, overallPriority);
     }
 

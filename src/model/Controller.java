@@ -2,7 +2,7 @@ package model;
 
 import model.dataStructure.HeapNode;
 import model.dataStructure.Priority;
-import model.dataStructure.standardPriority;
+import model.dataStructure.StandardPriority;
 
 import java.util.ArrayList;
 import java.util.Stack;
@@ -19,7 +19,7 @@ public class Controller {
     }
 
     public String outPutOrdering(ArrayList<HeapNode<Priority, Integer>> priorities){
-        priorities.add(new HeapNode<>(new standardPriority(0,0,0,0),11));
+        priorities.add(new HeapNode<>(new StandardPriority(0,0,0,0),11));
         return "";
     }
 
@@ -46,4 +46,5 @@ public class Controller {
     public void setFilesFirstClass(int filesFirstClass) {
         this.filesFirstClass = filesFirstClass;
     }
+
 }
