@@ -15,4 +15,6 @@ public class StandardPassenger extends Passenger{
     public void setPriority(StandardPriority priority) {
         this.priority = priority;
     }
+
+
 }

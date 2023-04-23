@@ -1,11 +1,10 @@
 package model;
 
+import model.dataStructure.Heap;
 import model.dataStructure.HeapNode;
 import model.dataStructure.Priority;
-import model.dataStructure.StandardPriority;
 
 import java.util.ArrayList;
-import java.util.Stack;
 
 public class Controller {
 
@@ -18,9 +17,16 @@ public class Controller {
         this.filesFirstClass = filesFirstClass;
     }
 
-    public String outPutOrdering(ArrayList<HeapNode<Priority, Integer>> priorities){
-        priorities.add(new HeapNode<>(new StandardPriority(0,0,0,0),11));
-        return "";
+    public String outPutOrdering(ArrayList<HeapNode<Priority, String>> priorities) {
+        String chain = "";
+        Heap<Priority, String> heap = new Heap<>();
+        heap.assignPassengers(priorities);
+        priorities = heap.heapSort();
+        for (int i = priorities.size() - 1, j = 0; i >= 0; i--) {
+            chain += (priorities.size() - i) + ". " + priorities.get(i).getValue() + "\n";
+        }
+
+        return chain;
     }
 
     public int getRows() {

@@ -48,7 +48,7 @@ public class Heap<K extends Comparable,V> implements IPriorityQueue<K,V> {
      * It´s worth to say when the heapsort is applied,  the list attribute is not a heap anymore, thus,
      * the heapSize is changed to 0.
      */
-    public void heapSort(){
+    public ArrayList<HeapNode<K, V>> heapSort(){
         buildHeap();
         for (int i = list.size()-1; i >= 1 ; i--) {
             HeapNode temporal = list.get(0);
@@ -57,6 +57,7 @@ public class Heap<K extends Comparable,V> implements IPriorityQueue<K,V> {
             heapSize-=1;
             maxHeapify(0);
         }
+        return list;
     }
 
     public int getFather(int position) {
