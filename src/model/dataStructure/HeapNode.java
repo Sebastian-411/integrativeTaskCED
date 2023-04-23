@@ -4,13 +4,13 @@ public class HeapNode <K extends Comparable,V> {
 
     private K key;
 
-    private V vlaue;
+    private V valaue;
 
 
     //Constructor
     public HeapNode(K key, V vlaue) {
         this.key = key;
-        this.vlaue = vlaue;
+        this.valaue = vlaue;
     }
 
     //Getter and Setter
@@ -23,11 +23,11 @@ public class HeapNode <K extends Comparable,V> {
         this.key = key;
     }
 
-    public V getVlaue() {
-        return vlaue;
+    public V getValaue() {
+        return valaue;
     }
 
-    public void setVlaue(V vlaue) {
-        this.vlaue = vlaue;
+    public void setValaue(V valaue) {
+        this.valaue = valaue;
     }
 }
