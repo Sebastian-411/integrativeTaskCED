@@ -56,7 +56,7 @@ public class Controller {
 
         entryOrderPassenger.assignPassengers(chairsList);
 
-        entryOrderPassenger.heapSort();
+            entryOrderPassenger.heapSort();
 
 
 
