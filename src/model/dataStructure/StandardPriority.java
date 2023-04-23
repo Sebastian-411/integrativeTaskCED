@@ -8,6 +8,7 @@ public class StandardPriority extends Priority implements Comparable{
 
     @Override
     public void overallPriority() {
+
     }
 
     @Override

@@ -4,6 +4,7 @@ public abstract class Priority implements Comparable{
     double punctuality;
     int distanceToCenter;
     int row;
+
     double overallPriority;
 
     public Priority(double punctuality, int distanceToCenter, int row, double overallPriority) {
@@ -36,5 +37,13 @@ public abstract class Priority implements Comparable{
 
     public void setRow(int row) {
         this.row = row;
+    }
+
+    public double getOverallPriority() {
+        return overallPriority;
+    }
+
+    public void setOverallPriority(double overallPriority) {
+        this.overallPriority = overallPriority;
     }
 }
