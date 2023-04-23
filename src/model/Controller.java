@@ -1,6 +1,8 @@
 package model;
 
 import com.google.gson.Gson;
+import model.airplane.abstractClasses.Passenger;
+import model.airplane.abstractClasses.Priority;
 import model.dataStructure.*;
 import java.io.*;
 import java.util.ArrayList;

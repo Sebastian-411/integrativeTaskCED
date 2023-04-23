@@ -1,4 +1,6 @@
-package model.dataStructure;
+package model.airplane;
+
+import model.airplane.abstractClasses.Priority;
 
 public class StandardPriority extends Priority implements Comparable{
 

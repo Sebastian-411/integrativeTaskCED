@@ -1,9 +1,11 @@
-package model.dataStructure;
+package model.airplane;
 
-public class StandardPassenger extends Passenger{
-    private StandardPriority priority;
+import model.airplane.abstractClasses.Passenger;
 
-    public StandardPassenger(String name, String passengerID, String ticket, StandardPriority priority) {
+public class FirstClassPassenger extends Passenger {
+    private FirstClassPriority priority;
+
+    public FirstClassPassenger(String name, String passengerID, String ticket, FirstClassPriority priority) {
         super(name, passengerID, ticket);
         this.priority = priority;
     }
@@ -20,13 +22,11 @@ public class StandardPassenger extends Passenger{
         this.priority.establishDistanceToCenter(center,column);
     }
 
-    public StandardPriority getPriority() {
+    public FirstClassPriority getPriority() {
         return priority;
     }
 
-    public void setPriority(StandardPriority priority) {
+    public void setPriority(FirstClassPriority priority) {
         this.priority = priority;
     }
-
-
 }

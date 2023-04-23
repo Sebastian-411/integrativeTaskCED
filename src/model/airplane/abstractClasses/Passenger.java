@@ -1,4 +1,4 @@
-package model.dataStructure;
+package model.airplane.abstractClasses;
 
 public abstract class Passenger {
     private String name;
