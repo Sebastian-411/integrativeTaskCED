@@ -10,12 +10,12 @@ public class Controller {
 
     private int rows;
     private int columns;
-    private int filesFirstClass;
+    private int rowsFirstClass;
     private HashTable<String, Passenger> passengerHashTable;
-    public Controller(int rows, int columns, int filesFirstClass) {
+    public Controller(int rows, int columns, int rowsFirstClass) {
         this.rows = rows;
         this.columns = columns;
-        this.filesFirstClass = filesFirstClass;
+        this.rowsFirstClass = rowsFirstClass;
     }
 
     public String outPutOrdering(ArrayList<HeapNode<Priority, String>> priorities) {
@@ -95,12 +95,12 @@ public class Controller {
         this.columns = columns;
     }
 
-    public int getFilesFirstClass() {
-        return filesFirstClass;
+    public int getRowsFirstClass() {
+        return rowsFirstClass;
     }
 
-    public void setFilesFirstClass(int filesFirstClass) {
-        this.filesFirstClass = filesFirstClass;
+    public void setRowsFirstClass(int rowsFirstClass) {
+        this.rowsFirstClass = rowsFirstClass;
     }
 
 }
