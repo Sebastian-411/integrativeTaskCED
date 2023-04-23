@@ -1,16 +1,17 @@
 package model;
 
-import model.dataStructure.Heap;
-import model.dataStructure.HeapNode;
-import model.dataStructure.Priority;
-
+import com.google.gson.Gson;
+import model.dataStructure.*;
+import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Controller {
 
     private int rows;
     private int columns;
     private int filesFirstClass;
+    private HashTable<String, Passenger> passengerHashTable;
     public Controller(int rows, int columns, int filesFirstClass) {
         this.rows = rows;
         this.columns = columns;
@@ -27,6 +28,55 @@ public class Controller {
         }
 
         return chain;
+    }
+
+    public ArrayList<Passenger> load(String path) throws IOException {
+
+        File file = new File(path);
+
+        FileInputStream fis = new FileInputStream(file);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(fis));
+        String content = "";
+        String line = "";
+        while((line = reader.readLine()) != null){
+            content += line + "\n";
+        }
+        Gson gson = new Gson();
+        Passenger passengers [] = gson.fromJson(content, Passenger[].class);
+
+        ArrayList<Passenger> passengersList = new ArrayList<>();
+        passengersList.addAll(List.of(passengers));
+
+        establishPriorities(passengersList);
+        generatePassengersHasTable(passengersList);
+
+        return passengersList;
+    }
+
+    public void generatePassengersHasTable(ArrayList<Passenger> passengers){
+        this.passengerHashTable = new HashTable<>(passengers.size());
+        for (int i = 0; i < passengers.size(); i++) {
+            this.passengerHashTable.insert(passengers.get(i).getPassengerID(),passengers.get(i));
+        }
+    }
+
+    public void establishPriorities(ArrayList<Passenger> passengers){
+        int center =  getColumns()/2;
+        int numPassengers = passengers.size();
+
+        for (int i = 0; i < passengers.size(); i++) {
+            char column = passengers.get(i).getTicket().charAt(0);
+            passengers.get(i).establishDistanceToCenter(center,column);
+            passengers.get(i).establishPunctuality(numPassengers,i+1 );
+        }
+    }
+
+    public HashTable<String, Passenger> getPassengerHashTable() {
+        return passengerHashTable;
+    }
+
+    public void setPassengerHashTable(HashTable<String, Passenger> passengerHashTable) {
+        this.passengerHashTable = passengerHashTable;
     }
 
     public int getRows() {

@@ -12,8 +12,6 @@ public class HashTable <K extends Comparable<K>,T> implements IHashTable<K ,T> {
         listOfNodes = new HashNode[m];
     }
 
-
-
     @Override
     public void insert(K key, T value) {
         int pos = key.hashCode()%ARR_SIZE;
@@ -95,6 +93,27 @@ public class HashTable <K extends Comparable<K>,T> implements IHashTable<K ,T> {
             return current.getValue();
         }
         return search(current.getNext(), key);
+    }
+
+    public String print(){
+        String message = "";
+        for(int i = 0; i < listOfNodes.length; i++){
+            String chain = "";
+            if (listOfNodes[i]  == null) chain+= i +". " + "Vacio ";
+            else {
+                chain += i +". " + (String)listOfNodes[i].getKey() + " | C: ";
+                if (listOfNodes[i].getNext() != null) chain += chainCollitions(listOfNodes[i].getNext());
+            }
+            chain += "\n";
+            message += chain;
+        }
+        return message;
+    }
+
+    private String chainCollitions(HashNode<K,T> current){
+        if (current == null) return "";
+        String chain= (String)current.getKey();
+        return chain +" "+chainCollitions(current.getNext());
     }
 
     

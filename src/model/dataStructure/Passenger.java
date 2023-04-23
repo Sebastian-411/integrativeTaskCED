@@ -10,6 +10,11 @@ public abstract class Passenger {
         this.passengerID = passengerID;
         this.ticket = ticket;
     }
+    abstract public void calculatePriority();
+
+    abstract public void establishPunctuality(int totalPassengers, int arrivalOrder);
+
+    abstract public void establishDistanceToCenter(int center,char column);
 
     public String getName() {
         return name;

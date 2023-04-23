@@ -7,6 +7,18 @@ public class FirstClassPassenger extends Passenger{
         super(name, passengerID, ticket);
         this.priority = priority;
     }
+    @Override
+    public void calculatePriority() {
+        this.priority.calculatePriority();
+    }
+    @Override
+    public void establishPunctuality(int totalPassengers, int arrivalOrder) {
+        this.priority.establishPunctuality(totalPassengers,arrivalOrder);
+    }
+    @Override
+    public void establishDistanceToCenter(int center, char column) {
+        this.priority.establishDistanceToCenter(center,column);
+    }
 
     public FirstClassPriority getPriority() {
         return priority;

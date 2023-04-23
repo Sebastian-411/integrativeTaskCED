@@ -7,7 +7,8 @@ public class StandardPriority extends Priority implements Comparable{
     }
 
     @Override
-    public void overallPriority() {
+    public void calculatePriority() {
+        setOverallPriority(getPunctuality() + getSection());
     }
 
     @Override
@@ -15,7 +16,7 @@ public class StandardPriority extends Priority implements Comparable{
         Priority toCompare = (Priority) o;
         int criteria1 = this.getRow() - toCompare.getRow()  ;
         if (criteria1 ==0  ){
-            int criteria2 = toCompare.distanceToCenter - this.getDistanceToCenter() ;
+            int criteria2 = toCompare.getDistanceToCenter() - this.getDistanceToCenter() ;
             if (criteria2 == 0){
                 double tem =   this.getPunctuality() - toCompare.getPunctuality();
                 int critereia3 = tem<0? -1:1;
