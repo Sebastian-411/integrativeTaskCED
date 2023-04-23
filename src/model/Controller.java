@@ -1,12 +1,11 @@
 package model;
 
 import com.google.gson.Gson;
-import model.airplane.abstractClasses.Passenger;
-import model.airplane.abstractClasses.Priority;
+import model.airplane.*;
+import model.airplane.abstractClasses.*;
 import model.dataStructure.*;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Controller {
 
@@ -30,6 +29,33 @@ public class Controller {
         }
 
         return chain;
+    }
+
+    public void entrySort(){
+
+        ArrayList<Passenger> listOfPassengers = load();
+
+        Heap<Double, String> entryOrderPassenger = new Heap<Double, String>();
+
+        ArrayList<HeapNode<Double, String>> chairsList = new ArrayList<HeapNode<Double, String>>();
+
+        for (int i = 0; i < listOfPassengers.size(); i++) {
+
+            if (listOfPassengers.get(i) instanceof FirstClassPassenger){
+                chairsList.add( new HeapNode<>( (  (FirstClassPassenger) listOfPassengers.get(i)).getPriority().getOverallPriority() ,listOfPassengers.get(i).getPassengerID() ) );
+            } else  {
+                chairsList.add( new HeapNode<>( (  (StandardPassenger) listOfPassengers.get(i)).getPriority().getOverallPriority() , listOfPassengers.get(i).getPassengerID() ) );
+            }
+
+        }
+
+        entryOrderPassenger.assignPassengers(chairsList);
+
+        entryOrderPassenger.heapSort();
+
+
+
+
     }
 
     public ArrayList<Passenger> load(String path) throws IOException {
