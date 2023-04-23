@@ -37,7 +37,7 @@ public class Main {
 
             Passenger passengerToAdd = null;
             String ticket = genTicket(rows, columns);
-            int row = Integer.valueOf(ticket.charAt(1));
+            int row = Integer.valueOf(ticket.substring(1,ticket.length()));
             if (ran.nextDouble() > proportion && passengersAmount > 0){
                 //Standard
 
