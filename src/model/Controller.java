@@ -52,10 +52,6 @@ public class Controller {
         entryOrderPassenger.assignPassengers(chairsList);
 
         entryOrderPassenger.heapSort();
-
-
-
-
     }
 
     public ArrayList<Passenger> load(String path) throws IOException {
