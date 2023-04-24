@@ -10,7 +10,8 @@ public abstract class Passenger {
         this.passengerID = passengerID;
         this.ticket = ticket;
     }
-    abstract public void calculatePriority();
+    abstract public double calculatePriority();
+    abstract public void setSection (int section);
 
     abstract public void establishPunctuality(int totalPassengers, int arrivalOrder);
 
