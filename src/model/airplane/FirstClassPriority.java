@@ -18,8 +18,9 @@ public class FirstClassPriority extends Priority implements Comparable{
         this.specialAttention = specialAttention;
     }
     @Override
-    public void calculatePriority() {
+    public double calculatePriority() {
         setOverallPriority( getSection() +  getMiles() + getSpecialAttention() + getPregnant() + getThirdAge());
+        return getOverallPriority();
     }
     @Override
     public int compareTo(Object o) {

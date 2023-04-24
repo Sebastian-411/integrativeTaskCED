@@ -19,11 +19,36 @@ public class Controller {
         this.rowsFirstClass = rowsFirstClass;
     }
 
-    public String outPutOrdering(ArrayList<HeapNode<Priority, String>> priorities) {
+    public String outPutOrdering() {
+
+        ArrayList<HeapNode<Priority, String>> priorities = new ArrayList<>();
+        ArrayList<HashNode<String,Passenger>> passengers = elementList();
+
+        for (int i = 0; i < passengers.size(); i++) {
+            HeapNode<Priority, String> node = null;
+            if (passengers.get(i).getValue() instanceof FirstClassPassenger){
+
+                FirstClassPassenger firstClassPassenger = (FirstClassPassenger) passengers.get(i).getValue();
+                node = new HeapNode<>(((FirstClassPassenger) passengers.get(i).getValue()).getPriority(),
+                                (passengers.get(i).getValue()).getPassengerID());
+
+
+            } else if (passengers.get(i).getValue() instanceof StandardPassenger) {
+
+                StandardPassenger standardPassenger = (StandardPassenger) passengers.get(i).getValue();
+                 node = new HeapNode<>(((StandardPassenger) passengers.get(i).getValue()).getPriority(),
+                                (passengers.get(i).getValue()).getPassengerID());
+            }
+
+            priorities.add(node);
+
+        }
         String chain = "";
         Heap<Priority, String> heap = new Heap<>();
+
         heap.assignPassengers(priorities);
         priorities = heap.heapSort();
+
         for (int i = priorities.size() - 1, j = 0; i >= 0; i--) {
             chain += (priorities.size() - i) + ". " + priorities.get(i).getValue() + "\n";
         }
@@ -31,34 +56,61 @@ public class Controller {
         return chain;
     }
 
-    public void entrySort(){
-
-        ArrayList<Passenger> listOfPassengers = load();
-
-        Heap<Double, String> entryOrderPassenger = new Heap<Double, String>();
-
-        ArrayList<HeapNode<Double, String>> chairsList = new ArrayList<HeapNode<Double, String>>();
-
-        for (int i = 0; i < listOfPassengers.size(); i++) {
-
-            if (listOfPassengers.get(i) instanceof FirstClassPassenger){
-                chairsList.add( new HeapNode<>( (  (FirstClassPassenger) listOfPassengers.get(i)).getPriority().getOverallPriority() ,listOfPassengers.get(i).getPassengerID() ) );
-            } else  {
-                chairsList.add( new HeapNode<>( (  (StandardPassenger) listOfPassengers.get(i)).getPriority().getOverallPriority() , listOfPassengers.get(i).getPassengerID() ) );
+    private ArrayList<HashNode<String,Passenger>> elementList(){
+        ArrayList<HashNode<String,Passenger>> elements = new ArrayList<>();
+        for (int i = 0; i < getPassengerHashTable().getListOfNodes().length; i++) {
+            if (getPassengerHashTable().getListOfNodes()[i] != null){
+                collisionsElements(elements, getPassengerHashTable().getListOfNodes()[i]);
             }
-
         }
-
-        entryOrderPassenger.assignPassengers(chairsList);
-
-        entryOrderPassenger.heapSort();
-
-
+        return elements;
+    }
+    private void collisionsElements(ArrayList<HashNode<String, Passenger>> elementList, HashNode<String,Passenger> current){
+        if (current == null) return;
+        elementList.add(current);
+        collisionsElements(elementList, current.getNext());
 
 
     }
 
-    public ArrayList<Passenger> load(String path) throws IOException {
+    public String entrySort(){
+
+        ArrayList<HashNode<String,Passenger>> passengers =elementList();
+        Heap<Double, String> entryOrderPassenger = new Heap<Double, String>();
+        ArrayList<HeapNode<Double,String>> heapNodes = new ArrayList<>();
+
+        // Section Calculation.
+        double sectionFirstClass = Math.ceil(getRowsFirstClass() / 10);
+        double sectionStandardClass = Math.ceil((getRows()-getRowsFirstClass())/10);
+
+
+        for (int i = 0; i < passengers.size(); i++) {
+            if (passengers.get(i).getValue() instanceof FirstClassPassenger){
+
+                passengers.get(i).getValue().setSection((int) sectionFirstClass);
+
+            } else if (passengers.get(i).getValue() instanceof StandardPassenger) {
+                passengers.get(i).getValue().setSection((int) sectionStandardClass);
+            }
+
+            HeapNode<Double, String > heapNode =
+                    new HeapNode<>(passengers.get(i).getValue().calculatePriority(),passengers.get(i).getKey());
+
+            heapNodes.add(heapNode);
+        }
+
+        entryOrderPassenger.assignPassengers(heapNodes);
+        entryOrderPassenger.heapSort();
+
+        String chain = "";
+
+        for (int i = entryOrderPassenger.getList().size() - 1, j = 0; i >= 0; i--) {
+            chain += (entryOrderPassenger.getList().size() - i) + ". " + entryOrderPassenger.getList().get(i).getValue() + "\n";
+        }
+        return chain;
+    }
+
+    public void load(String path) throws IOException {
 
         File file = new File(path);
 
@@ -78,7 +130,6 @@ public class Controller {
         establishPriorities(passengersList);
         generatePassengersHasTable(passengersList);
 
-        return passengersList;
     }
 
     public void generatePassengersHasTable(ArrayList<Passenger> passengers){

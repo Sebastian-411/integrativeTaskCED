@@ -13,7 +13,7 @@ public abstract class Priority implements Comparable{
         this.row = row;
         this.overallPriority = overallPriority;
     }
-    abstract public void calculatePriority();
+    abstract public double calculatePriority();
 
     public void establishPunctuality(int totalPassengers, int arrivalOrder){
         this.punctuality = (1 - (arrivalOrder/ totalPassengers)) * 0.5;
@@ -38,8 +38,11 @@ public abstract class Priority implements Comparable{
         return section;
     }
 
+
+
+
     public void setSection(int section) {
-        this.section = section;
+        this.section = (int) Math.ceil(row/section);
     }
 
     public double getPunctuality() {
