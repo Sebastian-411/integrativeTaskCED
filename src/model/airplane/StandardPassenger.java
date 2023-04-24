@@ -9,9 +9,15 @@ public class StandardPassenger extends Passenger {
         super(name, passengerID, ticket);
         this.priority = priority;
     }
+
+
     @Override
-    public void calculatePriority() {
-        this.priority.calculatePriority();
+    public void setSection(int section) {
+        this.getPriority().setSection(section);
+    }
+    @Override
+    public double calculatePriority() {
+        return this.priority.calculatePriority();
     }
     @Override
     public void establishPunctuality(int totalPassengers, int arrivalOrder) {
