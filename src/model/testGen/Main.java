@@ -1,7 +1,12 @@
 package model.testGen;
-import model.dataStructure.*;
+import model.*;
 
 import com.google.gson.Gson;
+import model.airplane.FirstClassPassenger;
+import model.airplane.FirstClassPriority;
+import model.airplane.StandardPassenger;
+import model.airplane.StandardPriority;
+import model.airplane.abstractClasses.Passenger;
 
 import java.util.ArrayList;
 import java.util.Random;

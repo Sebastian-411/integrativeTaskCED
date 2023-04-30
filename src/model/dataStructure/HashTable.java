@@ -18,7 +18,7 @@ public class HashTable <K extends Comparable<K>,T> implements IHashTable<K ,T> {
 
     @Override
     public void insert(K key, T value) {
-        int pos = key.hashCode()%ARR_SIZE;
+        int pos = Math.abs(key.hashCode()%ARR_SIZE);
         if (listOfNodes[pos] == null) {
             listOfNodes[pos] = new HashNode<K,T>(key, value);
         } else {
@@ -105,7 +105,22 @@ public class HashTable <K extends Comparable<K>,T> implements IHashTable<K ,T> {
             String chain = "";
             if (listOfNodes[i]  == null) chain+= i +". " + "Vacio ";
             else {
-                chain += i +". " + (String)listOfNodes[i].getKey() + " | C: ";
+                chain += i +". " + "Key: " + (String)listOfNodes[i].getKey() + " | C: ";
+                if (listOfNodes[i].getNext() != null) chain += chainCollitions(listOfNodes[i].getNext());
+            }
+            chain += "\n";
+            message += chain;
+        }
+        return message;
+    }
+
+    public String printValue(){
+        String message = "";
+        for(int i = 0; i < listOfNodes.length; i++){
+            String chain = "";
+            if (listOfNodes[i]  == null) chain+= i +". " + "Vacio ";
+            else {
+                chain += i +". " + "Key: " + (String)listOfNodes[i].getKey() + " Value: " + String.valueOf(listOfNodes[i].getValue()) +" | C: ";
                 if (listOfNodes[i].getNext() != null) chain += chainCollitions(listOfNodes[i].getNext());
             }
             chain += "\n";
@@ -116,8 +131,8 @@ public class HashTable <K extends Comparable<K>,T> implements IHashTable<K ,T> {
 
     private String chainCollitions(HashNode<K,T> current){
         if (current == null) return "";
-        String chain= (String)current.getKey();
-        return chain +" "+chainCollitions(current.getNext());
+        String chain = (String) current.getKey();
+        return chain +" "+ chainCollitions(current.getNext());
     }
 
     public HashNode<K, T>[] getListOfNodes() {
