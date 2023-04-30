@@ -8,13 +8,6 @@ public class Heap<K extends Comparable,V> implements IPriorityQueue<K,V> {
 
     private int heapSize;
 
-
-    // Airplane context methods
-    public void assignPassengers(ArrayList<HeapNode<K,V>> passengers){
-        list = passengers;
-        heapSize = passengers.size();
-    }
-
     // Heap methods
 
     public void maxHeapify(int from){
