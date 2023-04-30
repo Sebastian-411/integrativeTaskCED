@@ -17,6 +17,7 @@ public class TestGenerator {
     static Random ran = new Random();
     static String folder = "data";
     static String path = "data/data.txt";
+
     public static void main(String[] args) {
 
         System.out.println("Generador\n");
@@ -39,11 +40,12 @@ public class TestGenerator {
         while (passengersAmount > 0 || firstClassPassengersAmount > 0){
 
             Passenger passengerToAdd = null;
-            String ticket = genTicket(rows, columns);
-            int row = Integer.valueOf(ticket.substring(1,ticket.length()));
+            String ticket;
+            int row;
             if (ran.nextDouble() > proportion && passengersAmount > 0){
                 //Standard
-
+                ticket = genStandardTicket(firstClassRows, rows, columns);
+                row  = Integer.valueOf(ticket.substring(1,ticket.length()));
                 StandardPriority prior = new StandardPriority(0, 0, row, 0);
                 passengerToAdd = new StandardPassenger(genName(),genId(), ticket, prior);
 
@@ -52,6 +54,8 @@ public class TestGenerator {
 
             } else if (firstClassPassengersAmount > 0) {
                 //Premium
+                ticket = genPremiumTicket(firstClassRows, columns);
+                row  = Integer.valueOf(ticket.substring(1,ticket.length()));
                 FirstClassPriority prior = new FirstClassPriority(0, 0, row, 0, (((ran.nextInt(10) == 9)?0.14:0)) , (((ran.nextInt(100) == 51)?0.04:0)) ,(((ran.nextInt(100) == 9)?0.14:0)) ,(((ran.nextInt(200) == 9)?0.14:0)));
                 passengerToAdd = new FirstClassPassenger(genName(),genId(), ticket, prior);
                 firstClassPassengersAmount--;
@@ -87,7 +91,19 @@ public class TestGenerator {
         return name;
     }
 
-    public static  String genTicket(int rows, int columns){
+    public static  String genStandardTicket(int firstClassRows, int rows, int columns){
+        String ticket = "";
+        String abecedario = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+
+        ticket += (abecedario.charAt(ran.nextInt(columns)));
+        ticket += (ran.nextInt(firstClassRows ,rows)+1);
+
+
+        return ticket;
+    }
+
+    public static  String genPremiumTicket(int rows, int columns){
         String ticket = "";
         String abecedario = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
