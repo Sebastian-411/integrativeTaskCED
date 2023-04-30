@@ -129,7 +129,7 @@ public class Heap<K extends Comparable,V> implements IPriorityQueue<K,V> {
         }
     }
 
-    // Initial methods
+    //Initial methods
     //Constructor
     public Heap() {
         list = new ArrayList<>();
