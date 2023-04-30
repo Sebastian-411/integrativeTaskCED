@@ -8,9 +8,9 @@ public class HeapNode <K extends Comparable,V> {
 
 
     //Constructor
-    public HeapNode(K key, V vlaue) {
+    public HeapNode(K key, V value) {
         this.key = key;
-        this.value = vlaue;
+        this.value = value;
     }
 
     //Getter and Setter
