@@ -1,11 +1,14 @@
 import com.google.gson.Gson;
 
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.Scanner;
+import com.google.gson.GsonBuilder;
+import model.airplane.*;
+import model.airplane.abstractClasses.*;
+import model.serializers.Serializer;
+
+import java.util.*;
 import java.io.*;
 
-public class Main {
+public class TestGenerator {
 
     static ArrayList<Passenger> listOfPassengers = new ArrayList<Passenger>();
     static String[] listOfNames = "Alan Jacinto Martinez Alicia Jesús Mirta Andrea Josefina Mónica Andrés Juan Nicolás Antonia Juana Noé Antonio Juárez Noelia Azul Julia Paula Bartolomé Julián Patricio Belén Juliana Renzo Celeste Julio Rodrigo Edgardo Leandro Rodríguez Felicia Luis Romina Florencia Luisa Rosario Gaspar Marcelo Tato Gerardo Marcos Tomás Giménez María Victor Gonzalo Mariano Yayo Gustavo Martín Zulema".split(" ");
@@ -59,7 +62,7 @@ public class Main {
         }
 
         System.out.println(listOfPassengers.size());
-        System.out.println(listOfPassengers.toString());
+        listOfPassengers.forEach(passenger -> System.out.print(passenger.getPassengerID() + " "));
         try {
             save();
         } catch (IOException e) {
@@ -107,7 +110,11 @@ public class Main {
         }
         FileOutputStream fos = new FileOutputStream(file);
 
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder()
+                .registerTypeAdapter(FirstClassPassenger.class, new Serializer<FirstClassPassenger>())
+                .registerTypeAdapter(FirstClassPriority.class, new Serializer<FirstClassPriority>())
+                .registerTypeAdapter(StandardPassenger.class, new Serializer<StandardPassenger>())
+                .registerTypeAdapter(StandardPriority.class, new Serializer<StandardPriority>()).create();
         String data = gson.toJson(listOfPassengers);
 
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(fos));
@@ -115,7 +122,4 @@ public class Main {
         writer.flush();
         fos.close();
     }
-
-
-
 }
