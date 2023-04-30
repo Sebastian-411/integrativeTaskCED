@@ -1,5 +1,5 @@
-[{"priority":{"punctuality":0.0,"distanceToCenter":0,"row":4,"overallPriority":0.0,"section":0},"name":"Antonio Quintero","passengerID":"1","ticket":"A4"},
-{"priority":{"punctuality":0.0,"distanceToCenter":0,"row":3,"overallPriority":0.0,"section":0},"name":"Yayo Diaz","passengerID":"2","ticket":"A3"},
-{"priority":{"punctuality":0.0,"distanceToCenter":0,"row":3,"overallPriority":0.0,"section":0},"name":"Gerardo Muñoz","passengerID":"3","ticket":"C3"},
-{"priority":{"pregnant":0.0,"miles":0.0,"thirdAge":0.0,"specialAttention":0.0,"punctuality":0.0,"distanceToCenter":0,"row":1,"overallPriority":0.0,"section":0},"name":"Marcelo Escobar","passengerID":"4","ticket":"C1"},
-{"priority":{"pregnant":0.0,"miles":0.04,"thirdAge":0.0,"specialAttention":0.0,"punctuality":0.0,"distanceToCenter":0,"row":2,"overallPriority":0.0,"section":0},"name":"Felicia Rodriguez","passengerID":"5","ticket":"B2"}]
+[{"priority":{"punctuality":0.0,"distanceToCenter":0,"row":10,"overallPriority":0.0,"section":0},"name":"Gaspar Caicedo","passengerID":"4","ticket":"B10","CLASS_TYPE":"model.airplane.StandardPassenger"},
+{"priority":{"punctuality":0.0,"distanceToCenter":0,"row":7,"overallPriority":0.0,"section":0},"name":"Juárez Rincon","passengerID":"3","ticket":"A7","CLASS_TYPE":"model.airplane.StandardPassenger"},
+{"priority":{"punctuality":0.0,"distanceToCenter":0,"row":22,"overallPriority":0.0,"section":0},"name":"Edgardo Muñoz","passengerID":"5","ticket":"C22","CLASS_TYPE":"model.airplane.StandardPassenger"},
+{"priority":{"pregnant":0.0,"miles":0.0,"thirdAge":0.0,"specialAttention":0.0,"punctuality":0.0,"distanceToCenter":0,"row":5,"overallPriority":0.0,"section":0},"name":"Bartolomé Suarez","passengerID":"2","ticket":"C5","CLASS_TYPE":"model.airplane.FirstClassPassenger"},
+{"priority":{"pregnant":0.14,"miles":0.2,"thirdAge":0.0,"specialAttention":0.0,"punctuality":0.0,"distanceToCenter":0,"row":1,"overallPriority":0.0,"section":0},"name":"Victor Muñoz","passengerID":"1","ticket":"C1","CLASS_TYPE":"model.airplane.FirstClassPassenger"}]

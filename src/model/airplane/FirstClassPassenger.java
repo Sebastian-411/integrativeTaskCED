@@ -19,8 +19,8 @@ public class FirstClassPassenger extends Passenger {
     }
 
     @Override
-    public double calculatePriority() {
-        return this.priority.calculatePriority();
+    public double calculatePriority(int numSections) {
+        return this.priority.calculatePriority(numSections);
     }
     @Override
     public void establishPunctuality(int totalPassengers, int arrivalOrder) {
