@@ -35,8 +35,9 @@ public class HashTableTest {
         hashTable.insert("AAAA",1);
         hashTable.insert("BBCC",2);
         hashTable.insert("CCDD",3);
-        System.out.println(hashTable.print());
         assertEquals(hashTable.getListOfNodes()[0].getKey() , "CCDD");
+        assertEquals(hashTable.getListOfNodes()[1].getKey() , "BBCC");
+        assertEquals(hashTable.getListOfNodes()[0].getNext().getKey() , "AAAA");
 
     }
     @Test
@@ -209,8 +210,10 @@ public class HashTableTest {
         assertEquals(6, hashTable.search("FFGG"));
         assertEquals(660, hashTable.search("6666666666"));
         assertEquals(50, hashTable.search("55555"));
+
         assertTrue(hashTable.delete("6666666666"));
         assertNull(hashTable.search("6666666666"));
+
         assertEquals(150, hashTable.search("1515151515"));
         assertTrue(hashTable.delete("LLMM"));
         assertNull(hashTable.search("LLMM"));
