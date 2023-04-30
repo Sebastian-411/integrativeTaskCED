@@ -34,7 +34,7 @@ public class HashTable <K extends Comparable<K>,T> implements IHashTable<K ,T> {
 
     @Override
     public boolean delete(K key) {
-        int pos = key.hashCode()%ARR_SIZE;
+        int pos = Math.abs(key.hashCode()%ARR_SIZE);
         if (listOfNodes[pos].getKey().compareTo(key) == 0) {
             deleteNode(listOfNodes[pos], key, pos);
             return true;
@@ -81,7 +81,7 @@ public class HashTable <K extends Comparable<K>,T> implements IHashTable<K ,T> {
 
     @Override
     public T search(K key) {
-        int pos = key.hashCode()%ARR_SIZE;
+        int pos = Math.abs(key.hashCode()%ARR_SIZE);
         if (listOfNodes[pos] != null) {
             if (listOfNodes[pos].getKey().compareTo(key) == 0) {
                 return listOfNodes[pos].getValue();
