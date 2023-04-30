@@ -118,7 +118,7 @@ public class Heap<K extends Comparable,V> implements IPriorityQueue<K,V> {
     public void insert(K key, V value) {
         heapSize ++;
         list.add(new HeapNode<>(key, value));
-        int position = heapSize;
+        int position = heapSize-1;
 
         while (position > 0 && list.get(getFather(position)).getKey().compareTo(list.get(position).getKey()) < 0 ){
 
@@ -132,6 +132,7 @@ public class Heap<K extends Comparable,V> implements IPriorityQueue<K,V> {
     // Initial methods
     //Constructor
     public Heap() {
+        list = new ArrayList<>();
         heapSize = 0;
     }
     //Getters and Setters
