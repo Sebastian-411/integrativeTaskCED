@@ -1,0 +1,5 @@
+[{"priority":{"punctuality":0.0,"distanceToCenter":0,"row":10,"overallPriority":0.0,"section":0},"name":"Gaspar Caicedo","passengerID":"3","ticket":"B10","CLASS_TYPE":"model.airplane.StandardPassenger"},
+{"priority":{"punctuality":0.0,"distanceToCenter":0,"row":10,"overallPriority":0.0,"section":0},"name":"Juárez Rincon","passengerID":"4","ticket":"A10","CLASS_TYPE":"model.airplane.StandardPassenger"},
+{"priority":{"punctuality":0.0,"distanceToCenter":0,"row":22,"overallPriority":0.0,"section":0},"name":"Edgardo Muñoz","passengerID":"5","ticket":"C22","CLASS_TYPE":"model.airplane.StandardPassenger"},
+{"priority":{"pregnant":0.0,"miles":0.0,"thirdAge":0.0,"specialAttention":0.0,"punctuality":0.0,"distanceToCenter":0,"row":1,"overallPriority":0.0,"section":0},"name":"Bartolomé Suarez","passengerID":"2","ticket":"B1","CLASS_TYPE":"model.airplane.FirstClassPassenger"},
+{"priority":{"pregnant":0.14,"miles":0.2,"thirdAge":0.0,"specialAttention":0.0,"punctuality":0.0,"distanceToCenter":0,"row":1,"overallPriority":0.0,"section":0},"name":"Victor Muñoz","passengerID":"1","ticket":"C1","CLASS_TYPE":"model.airplane.FirstClassPassenger"}]

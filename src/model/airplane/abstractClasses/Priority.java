@@ -13,10 +13,11 @@ public abstract class Priority implements Comparable{
         this.row = row;
         this.overallPriority = overallPriority;
     }
-    abstract public double calculatePriority();
+    abstract public double calculatePriority(int numSections);
 
     public void establishPunctuality(int totalPassengers, int arrivalOrder){
-        this.punctuality = (1 - (arrivalOrder/ totalPassengers)) * 0.5;
+        double proportion  = (double)arrivalOrder/ totalPassengers;
+        this.punctuality = (1 - proportion) * 0.5;
     };
 
     public void establishDistanceToCenter(int center,char column){
