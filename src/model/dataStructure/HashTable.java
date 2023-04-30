@@ -1,6 +1,8 @@
 package model.dataStructure;
 import model.dataStructure.dataStructureInterface.IHashTable;
 
+import java.util.ArrayList;
+
 public class HashTable <K extends Comparable<K>,T> implements IHashTable<K ,T> {
 
     public HashNode<K,T>[] listOfNodes;
@@ -11,6 +13,8 @@ public class HashTable <K extends Comparable<K>,T> implements IHashTable<K ,T> {
         ARR_SIZE = m;
         listOfNodes = new HashNode[m];
     }
+
+
 
     @Override
     public void insert(K key, T value) {
@@ -116,5 +120,19 @@ public class HashTable <K extends Comparable<K>,T> implements IHashTable<K ,T> {
         return chain +" "+chainCollitions(current.getNext());
     }
 
-    
+    public HashNode<K, T>[] getListOfNodes() {
+        return listOfNodes;
+    }
+
+    public void setListOfNodes(HashNode<K, T>[] listOfNodes) {
+        this.listOfNodes = listOfNodes;
+    }
+
+    public static int getArrSize() {
+        return ARR_SIZE;
+    }
+
+    public static void setArrSize(int arrSize) {
+        ARR_SIZE = arrSize;
+    }
 }

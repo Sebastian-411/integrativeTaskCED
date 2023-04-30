@@ -9,8 +9,9 @@ public class StandardPriority extends Priority implements Comparable{
     }
 
     @Override
-    public void calculatePriority() {
+    public double calculatePriority() {
         setOverallPriority(getPunctuality() + getSection());
+        return getOverallPriority();
     }
 
     @Override
