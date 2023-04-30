@@ -19,6 +19,32 @@ public class Controller {
         this.rowsFirstClass = rowsFirstClass;
     }
 
+    //Loading
+
+    public void load(String path) throws IOException {
+
+        File file = new File(path);
+
+        FileInputStream fis = new FileInputStream(file);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(fis));
+        String content = "";
+        String line = "";
+        while((line = reader.readLine()) != null){
+            content += line + "\n";
+        }
+        Gson gson = new Gson();
+        Passenger passengers [] = gson.fromJson(content, Passenger[].class);
+
+        ArrayList<Passenger> passengersList = new ArrayList<>();
+        passengersList.addAll(List.of(passengers));
+
+        establishPriorities(passengersList);
+        generatePassengersHasTable(passengersList);
+
+    }
+
+    //Sorting
+
     public String outPutOrdering() {
 
         ArrayList<HashNode<String,Passenger>> passengers = elementList();
@@ -79,6 +105,40 @@ public class Controller {
         return chain;
     }
 
+    //Priorities staff
+
+    private void sectionCalculationAndAssignment(ArrayList<HashNode<String,Passenger>> passengers){
+
+        // Section Calculation.
+        double sectionFirstClass = Math.ceil(getRowsFirstClass() / 10);
+        double sectionStandardClass = Math.ceil((getRows()-getRowsFirstClass())/10);
+
+        //      This "for" is used to assign a section value for each passenger depending on its type, first class or Standard.
+        for (int i = 0; i < passengers.size(); i++) {
+            if (passengers.get(i).getValue() instanceof FirstClassPassenger){
+
+                passengers.get(i).getValue().setSection((int) sectionFirstClass);
+
+            } else if (passengers.get(i).getValue() instanceof StandardPassenger) {
+                passengers.get(i).getValue().setSection((int) sectionStandardClass);
+            }
+        }
+    }
+    public void establishPriorities(ArrayList<Passenger> passengers){
+        int center =  getColumns()/2;
+        int numPassengers = passengers.size();
+
+        for (int i = 0; i < passengers.size(); i++) {
+            char column = passengers.get(i).getTicket().charAt(0);
+
+            passengers.get(i).establishDistanceToCenter(center,column);
+            passengers.get(i).establishPunctuality(numPassengers,i+1 );
+
+        }
+    }
+
+    //Generations
+
     /**
      * This method convert the hash table of passengers into an arraylist of passengers, the idea behind this, is to extract
      * the possible collisions of a hash table.
@@ -102,46 +162,6 @@ public class Controller {
         collisionsElements(elementList, current.getNext());
     }
 
-    private void sectionCalculationAndAssignment(ArrayList<HashNode<String,Passenger>> passengers){
-
-        // Section Calculation.
-        double sectionFirstClass = Math.ceil(getRowsFirstClass() / 10);
-        double sectionStandardClass = Math.ceil((getRows()-getRowsFirstClass())/10);
-
-        //      This "for" is used to assign a section value for each passenger depending on its type, first class or Standard.
-        for (int i = 0; i < passengers.size(); i++) {
-            if (passengers.get(i).getValue() instanceof FirstClassPassenger){
-
-                passengers.get(i).getValue().setSection((int) sectionFirstClass);
-
-            } else if (passengers.get(i).getValue() instanceof StandardPassenger) {
-                passengers.get(i).getValue().setSection((int) sectionStandardClass);
-            }
-        }
-    }
-
-    public void load(String path) throws IOException {
-
-        File file = new File(path);
-
-        FileInputStream fis = new FileInputStream(file);
-        BufferedReader reader = new BufferedReader(new InputStreamReader(fis));
-        String content = "";
-        String line = "";
-        while((line = reader.readLine()) != null){
-            content += line + "\n";
-        }
-        Gson gson = new Gson();
-        Passenger passengers [] = gson.fromJson(content, Passenger[].class);
-
-        ArrayList<Passenger> passengersList = new ArrayList<>();
-        passengersList.addAll(List.of(passengers));
-
-        establishPriorities(passengersList);
-        generatePassengersHasTable(passengersList);
-
-    }
-
     public void generatePassengersHasTable(ArrayList<Passenger> passengers){
         this.passengerHashTable = new HashTable<>(passengers.size());
         for (int i = 0; i < passengers.size(); i++) {
@@ -149,18 +169,9 @@ public class Controller {
         }
     }
 
-    public void establishPriorities(ArrayList<Passenger> passengers){
-        int center =  getColumns()/2;
-        int numPassengers = passengers.size();
 
-        for (int i = 0; i < passengers.size(); i++) {
-            char column = passengers.get(i).getTicket().charAt(0);
 
-            passengers.get(i).establishDistanceToCenter(center,column);
-            passengers.get(i).establishPunctuality(numPassengers,i+1 );
-
-        }
-    }
+    //Getters and Setters
 
     public HashTable<String, Passenger> getPassengerHashTable() {
         return passengerHashTable;
