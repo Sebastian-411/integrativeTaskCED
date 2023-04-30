@@ -1,0 +1,5 @@
+[{"priority":{"punctuality":0.0,"distanceToCenter":0,"row":4,"overallPriority":0.0,"section":0},"name":"Antonio Quintero","passengerID":"1","ticket":"A4"},
+{"priority":{"punctuality":0.0,"distanceToCenter":0,"row":3,"overallPriority":0.0,"section":0},"name":"Yayo Diaz","passengerID":"2","ticket":"A3"},
+{"priority":{"punctuality":0.0,"distanceToCenter":0,"row":3,"overallPriority":0.0,"section":0},"name":"Gerardo Muñoz","passengerID":"3","ticket":"C3"},
+{"priority":{"pregnant":0.0,"miles":0.0,"thirdAge":0.0,"specialAttention":0.0,"punctuality":0.0,"distanceToCenter":0,"row":1,"overallPriority":0.0,"section":0},"name":"Marcelo Escobar","passengerID":"4","ticket":"C1"},
+{"priority":{"pregnant":0.0,"miles":0.04,"thirdAge":0.0,"specialAttention":0.0,"punctuality":0.0,"distanceToCenter":0,"row":2,"overallPriority":0.0,"section":0},"name":"Felicia Rodriguez","passengerID":"5","ticket":"B2"}]

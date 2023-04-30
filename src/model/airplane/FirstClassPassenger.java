@@ -1,6 +1,9 @@
 package model.airplane;
 
+import com.google.gson.*;
 import model.airplane.abstractClasses.Passenger;
+
+import java.lang.reflect.Type;
 
 public class FirstClassPassenger extends Passenger {
     private FirstClassPriority priority;

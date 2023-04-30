@@ -1,13 +1,15 @@
 package model;
 
-import com.google.gson.Gson;
+import com.google.gson.*;
 import model.airplane.*;
 import model.airplane.abstractClasses.*;
 import model.dataStructure.*;
+import model.serializers.*;
+
 import java.io.*;
 import java.util.*;
 
-public class Controller {
+public class Controller  {
 
     private int rows;
     private int columns;
@@ -23,6 +25,8 @@ public class Controller {
 
     public void load(String path) throws IOException {
 
+
+
         File file = new File(path);
 
         FileInputStream fis = new FileInputStream(file);
@@ -32,7 +36,15 @@ public class Controller {
         while((line = reader.readLine()) != null){
             content += line + "\n";
         }
-        Gson gson = new Gson();
+
+        System.out.println(content);
+
+        // Gson with types
+
+        Gson gson = new GsonBuilder()
+                .registerTypeAdapter(Passenger.class, new Serializer<Passenger>()).create();
+
+
         Passenger passengers [] = gson.fromJson(content, Passenger[].class);
 
         ArrayList<Passenger> passengersList = new ArrayList<>();
@@ -167,6 +179,7 @@ public class Controller {
         for (int i = 0; i < passengers.size(); i++) {
             this.passengerHashTable.insert(passengers.get(i).getPassengerID(),passengers.get(i));
         }
+        System.out.println(passengerHashTable.print());
     }
 
 

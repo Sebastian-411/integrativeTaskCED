@@ -1,5 +1,6 @@
 package model.dataStructure;
 import model.dataStructure.dataStructureInterface.IHashTable;
+import ui.Main;
 
 import java.util.ArrayList;
 
@@ -18,7 +19,7 @@ public class HashTable <K extends Comparable<K>,T> implements IHashTable<K ,T> {
 
     @Override
     public void insert(K key, T value) {
-        int pos = key.hashCode()%ARR_SIZE;
+        int pos = Math.abs(key.hashCode()%ARR_SIZE);
         if (listOfNodes[pos] == null) {
             listOfNodes[pos] = new HashNode<K,T>(key, value);
         } else {
