@@ -29,7 +29,37 @@ public class HashTableTest {
 
 
     //Prueba Estándar
+    @Test
+    public void insertBasicTest(){
+        setupStage1();
+        hashTable.insert("AAAA",1);
+        hashTable.insert("BBCC",2);
+        hashTable.insert("CCDD",3);
+        System.out.println(hashTable.print());
+        assertEquals(hashTable.getListOfNodes()[0].getKey() , "CCDD");
 
+    }
+    @Test
+    public void searchBasicTest(){
+        setupStage1();
+        hashTable.insert("AAAA",1);
+        hashTable.insert("BBCC",2);
+        hashTable.insert("CCDD",3);
+        assertEquals(1, hashTable.search("AAAA"));
+        assertEquals(2, hashTable.search("BBCC"));
+        assertEquals(3, hashTable.search("CCDD"));
+    }
+    @Test
+    public void deleteBasicTest(){
+        setupStage1();
+        hashTable.insert("AAAA",1);
+        assertEquals(1, hashTable.search("AAAA"));
+        assertTrue(hashTable.delete("AAAA"));
+        assertNull(hashTable.search("AAAA"));
+    }
+
+
+    
 
 
 }
