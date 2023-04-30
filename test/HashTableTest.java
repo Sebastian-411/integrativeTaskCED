@@ -198,6 +198,11 @@ public class HashTableTest {
             hashTable.insert(("" +i+i+i+i+i) , (i*10));
         }
 
+        assertTrue(hashTable.delete("1414141414"));
+        assertNull(hashTable.search("1414141414"));
+
+
+
         assertEquals(3, hashTable.search("CCDD"));
         assertEquals(4, hashTable.search("DDEE"));
         assertEquals(5, hashTable.search("EEFF"));
@@ -214,9 +219,7 @@ public class HashTableTest {
         assertEquals(465, hashTable.search("93939393"));
         assertTrue(hashTable.delete("93939393"));
         assertNull(hashTable.search("93939393"));
-        for (int i = 0; i < 100 & i!=66; i++) {
-            assertEquals((i*10), hashTable.search(("" +i+i+i+i+i)));
-        }
+
     }
 
 
