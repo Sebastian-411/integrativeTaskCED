@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="446c0b91-68a2-4696-ba4b-05a39b23695b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/dataStructure/HashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/dataStructure/HashTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/testGen/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/testGen/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/HashTableTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/HashTableTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="446c0b91-68a2-4696-ba4b-05a39b23695b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -125,7 +120,7 @@
       <workItem from="1682223216640" duration="8100000" />
       <workItem from="1682262545093" duration="6636000" />
       <workItem from="1682822326779" duration="4664000" />
-      <workItem from="1682835600105" duration="2631000" />
+      <workItem from="1682835600105" duration="2977000" />
     </task>
     <servers />
   </component>
