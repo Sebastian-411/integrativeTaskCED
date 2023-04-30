@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="446c0b91-68a2-4696-ba4b-05a39b23695b" name="Changes" comment="" />
+    <list default="true" id="f37236f4-e85c-4fea-9439-50ac9d12f037" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +26,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2OoEJor4WkxiLBsAdFWPuHbDEqn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -149,5 +150,13 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="model.Controller" memberName="columns" />
+        <PinnedItemInfo parentTag="model.dataStructure.HashTable" memberName="listOfNodes" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
