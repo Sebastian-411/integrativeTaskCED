@@ -18,6 +18,8 @@ public class TestGenerator {
     static String folder = "data";
     static String path = "data/data.txt";
 
+    static ArrayList<String> listOfTickets = new ArrayList<>();
+
     public static void main(String[] args) {
 
         System.out.println("Generador\n");
@@ -99,6 +101,13 @@ public class TestGenerator {
         ticket += (abecedario.charAt(ran.nextInt(columns)));
         ticket += (ran.nextInt(firstClassRows ,rows)+1);
 
+        while (listOfTickets.contains(ticket)){
+            ticket = "";
+            ticket += (abecedario.charAt(ran.nextInt(columns)));
+            ticket += (ran.nextInt(firstClassRows ,rows)+1);
+        }
+        listOfTickets.add(ticket);
+
 
         return ticket;
     }
@@ -110,6 +119,13 @@ public class TestGenerator {
 
         ticket += (abecedario.charAt(ran.nextInt(columns)));
         ticket += (ran.nextInt(rows)+1);
+
+        while (listOfTickets.contains(ticket)){
+            ticket = "";
+            ticket += (abecedario.charAt(ran.nextInt(columns)));
+            ticket += (ran.nextInt(rows)+1);
+        }
+        listOfTickets.add(ticket);
 
 
         return ticket;
