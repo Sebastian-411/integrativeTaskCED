@@ -14,6 +14,27 @@ public class Main {
     public static void main(String[] args) {
         init();
         setScenario();
+        try {
+            controller.load("data/data.txt");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("\nQue accion desea realizar? \n 1. Mostrar ordenamiento de entrada \n 2. Mostrar ordenamiento de salida \n 3. Salir");
+        String opt;
+        while (true){
+            opt = scanner.nextLine();
+            switch (opt){
+                case "1":
+                    System.out.println(controller.entrySort());
+                    break;
+                case "2":
+                    System.out.println(controller.outPutOrdering());
+                    break;
+                case "3":
+                    System.exit(0);
+                    break;
+            }
+        }
     }
     public static void init(){
         testgenerator = new TestGenerator();
