@@ -52,6 +52,17 @@ public class HeapTest {
         heap.setList(setUp);
         heap.setHeapSize(10);
     }
+    public void setUpStage5(){
+        heap = new Heap<>();
+        ArrayList<HeapNode<Integer,String >> setUp = new ArrayList<>();
+        setUp.add(new HeapNode<>(5,"1"));
+        setUp.add(new HeapNode<>(9,"2"));
+        setUp.add(new HeapNode<>(10,"3"));
+        setUp.add(new HeapNode<>(15,"4"));
+
+        heap.setList(setUp);
+        heap.setHeapSize(4);
+    }
     @Test
     public void insertInAnEmptyHeap(){
         setUpStage1();
@@ -68,7 +79,14 @@ public class HeapTest {
         assertEquals(4,heap.getHeapSize());
         assertEquals(12,heap.getList().get(1).getKey());
     }
-
+    @Test
+    public void insertCurrentLeaf(){
+        setUpStage2();
+        heap.insert(-10,"leaf");
+        assertEquals(5,heap.getList().get(heap.getFather(3)).getKey());
+        assertEquals(4,heap.getHeapSize());
+        assertEquals(-10,heap.getList().get(3).getKey());
+    }
     @Test
     public void maxHeapifyTest(){
         setUpStage3();
@@ -78,6 +96,27 @@ public class HeapTest {
         assertEquals(4,heap.getList().get(4).getKey());
     }
 
+    @Test
+    public void maxHeapifyTestFrom5(){
+        setUpStage4();
+        heap.maxHeapify(5);
+        assertEquals(7,heap.getList().get(9).getKey());
+        assertEquals(16,heap.getList().get(4).getKey());
+    }
+    @Test
+    public void maxHeapifyTestFrom(){
+        setUpStage4();
+        heap.maxHeapify(3);
+        assertEquals(14,heap.getList().get(3).getKey());
+        assertEquals(2,heap.getList().get(7).getKey());
+    }
+    @Test
+    public void maxHeapifyTestFrom2(){
+        setUpStage4();
+        heap.maxHeapify(2);
+        assertEquals(10,heap.getList().get(2).getKey());
+        assertEquals(3,heap.getList().get(6).getKey());
+    }
     @Test
     public void buildHeapTest(){
         setUpStage4();
@@ -89,7 +128,29 @@ public class HeapTest {
         }
         assertEquals("16 14 10 8 7 9 3 2 4 1", chain.trim());
     }
+    @Test
+    public void buildHeapTestNonOrdered(){
+        setUpStage5();
+        heap.buildHeap();
+        String chain= "";
+        for (HeapNode node: heap.getList()
+        ) {
+            chain+=node.getKey() + " ";
+        }
+        assertEquals("15 9 10 5", chain.trim());
+    }
 
+    @Test
+    public void buildHeapTestOrdered(){
+        setUpStage2();
+        heap.buildHeap();
+        String chain= "";
+        for (HeapNode node: heap.getList()
+        ) {
+            chain+=node.getKey() + " ";
+        }
+        assertEquals("12 5 6", chain.trim());
+    }
     @Test
     public void heapSortTest(){
         setUpStage4();
