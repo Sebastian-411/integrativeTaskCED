@@ -96,7 +96,7 @@ public class Controller  {
 
             Passenger passenger = passengerHashTable.search(outputHeap.getList().get(i).getValue());
             if ( passenger instanceof  StandardPassenger){
-                chain += (outputHeap.getList().size() - i) + ". ID STAND: " + passenger.getPassengerID() +
+                chain += (outputHeap.getList().size() - i) + ". ID STAND: " + passenger.getPassengerID() +"| Ticket: " +passenger.getTicket() +
                         " | Punctuality: " + ((StandardPassenger) passenger).getPriority().getPunctuality() +
                         " | Distance to center: " +  ((StandardPassenger) passenger).getPriority().getDistanceToCenter() +
                         " | Section: " + ((StandardPassenger) passenger).getPriority().getSection() +
@@ -105,7 +105,7 @@ public class Controller  {
                         "\n";
 
             } else if (passenger instanceof  FirstClassPassenger) {
-                chain += (outputHeap.getList().size() - i) + ". ID FC:" + passenger.getPassengerID() +
+                chain += (outputHeap.getList().size() - i) + ". ID FC:" + passenger.getPassengerID() + "| Ticket: " +passenger.getTicket() +
                         " | Punctuality: " + ((FirstClassPassenger) passenger).getPriority().getPunctuality() +
                         " | Distance to center: " +  ((FirstClassPassenger) passenger).getPriority().getDistanceToCenter() +
                         " | Section: " + ((FirstClassPassenger) passenger).getPriority().getSection() +
@@ -143,7 +143,7 @@ public class Controller  {
             Passenger passenger = passengerHashTable.search(entryOrderPassenger.getList().get(i).getValue());
 
             if ( passenger instanceof  StandardPassenger){
-                chain += (entryOrderPassenger.getList().size() -i) + ". ID STAND: " + passenger.getPassengerID() +
+                chain += (entryOrderPassenger.getList().size() -i) + ". ID STAND: " + passenger.getPassengerID() + "| Ticket: " +passenger.getTicket() +
                         " | Punctuality: " + ((StandardPassenger) passenger).getPriority().getPunctuality() +
                         " | Distance to center: " +  ((StandardPassenger) passenger).getPriority().getDistanceToCenter() +
                         " | Section: " + ((StandardPassenger) passenger).getPriority().getSection() +
@@ -152,7 +152,7 @@ public class Controller  {
                         "\n";
 
             } else if (passenger instanceof  FirstClassPassenger) {
-                chain += (entryOrderPassenger.getList().size() -i) + ". ID FC: " + passenger.getPassengerID() +
+                chain += (entryOrderPassenger.getList().size() -i) + ". ID FC: " + passenger.getPassengerID() +"| Ticket: " +passenger.getTicket() +
                         " | Punctuality: " + ((FirstClassPassenger) passenger).getPriority().getPunctuality() +
                         " | Distance to center: " +  ((FirstClassPassenger) passenger).getPriority().getDistanceToCenter() +
                         " | Section: " + ((FirstClassPassenger) passenger).getPriority().getSection() +

@@ -4,7 +4,6 @@
     <list default="true" id="f37236f4-e85c-4fea-9439-50ac9d12f037" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/data.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/integrativeTaskCED/model/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/integrativeTaskCED/model/Controller.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Controller.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -138,7 +137,7 @@
       <workItem from="1682262545093" duration="6636000" />
       <workItem from="1682822326779" duration="4664000" />
       <workItem from="1682835600105" duration="2977000" />
-      <workItem from="1682899303880" duration="14486000" />
+      <workItem from="1682899303880" duration="15461000" />
     </task>
     <servers />
   </component>
@@ -175,6 +174,15 @@
           <url>file://$PROJECT_DIR$/test/HeapTest.java</url>
           <line>107</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/testGenerator/TestGenerator.java</url>
+          <line>24</line>
+          <properties class="testGenerator.TestGenerator" method="createScenario">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
