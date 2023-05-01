@@ -1,3 +1,5 @@
+package testGenerator;
+
 import com.google.gson.Gson;
 
 import com.google.gson.GsonBuilder;
@@ -22,20 +24,10 @@ public class TestGenerator {
 
     public static void main(String[] args) {
 
-        System.out.println("Generador \n");
-        System.out.println("Digite la cantidad de filas que tendrá el avión");
-        int rows = Integer.valueOf(reader.nextLine());
-        System.out.println("Digite la cantidad de sillas que tendrá cada fila");
-        int columns = Integer.valueOf(reader.nextLine());
-        System.out.println("Digite la cantidad de filas designadas para primera clase");
-        int firstClassRows = Integer.valueOf(reader.nextLine());
 
+    }
 
-        System.out.println("Digite la cantidad total de pasajeros del avion. Recuerde que la cantidad no debe superar " + (rows*columns));
-        int totalAmountPassengers = Integer.valueOf(reader.nextLine());
-        System.out.println("Digite la cantidad de pasajeros de primera clase. Recuerde que la cantidad no debe superar " + (firstClassRows*columns)); 
-        int firstClassPassengersAmount = Integer.valueOf(reader.nextLine());
-        int passengersAmount = totalAmountPassengers - firstClassPassengersAmount;
+    public void createScenario(int rows, int columns, int firstClassRows, int passengersAmount,int totalAmountPassengers, int firstClassPassengersAmount){
 
         double proportion = passengersAmount/totalAmountPassengers;
 
@@ -74,7 +66,9 @@ public class TestGenerator {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
 
+    public TestGenerator() {
     }
 
     public static  String genId(){
