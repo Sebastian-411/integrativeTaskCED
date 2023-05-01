@@ -22,7 +22,7 @@ public class TestGenerator {
 
     public static void main(String[] args) {
 
-        System.out.println("Generador\n");
+        System.out.println("Generador \n");
         System.out.println("Digite la cantidad de filas que tendrá el avión");
         int rows = Integer.valueOf(reader.nextLine());
         System.out.println("Digite la cantidad de sillas que tendrá cada fila");
