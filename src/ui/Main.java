@@ -1,5 +1,6 @@
 package ui;
 
+import model.Controller;
 import testGenerator.TestGenerator;
 
 import java.io.IOException;
@@ -9,18 +10,17 @@ public class Main {
 
     static TestGenerator testgenerator;
     static Scanner scanner;
+    static Controller controller;
     public static void main(String[] args) {
         init();
-        setTestgenerator();
-
-
+        setScenario();
     }
     public static void init(){
         testgenerator = new TestGenerator();
         scanner = new Scanner(System.in);
     }
 
-    public static void setTestgenerator(){
+    public static void setScenario(){
         System.out.println("Generador \n");
         System.out.println("Digite la cantidad de filas que tendrá el avión");
         int rows = Integer.valueOf(scanner.nextLine());
@@ -34,6 +34,7 @@ public class Main {
         int firstClassPassengersAmount = Integer.valueOf(scanner.nextLine());
         int passengersAmount = totalAmountPassengers - firstClassPassengersAmount;
 
-
+        testgenerator.createScenario(rows, columns, firstClassRows, passengersAmount, totalAmountPassengers, firstClassPassengersAmount);
+        controller = new Controller(rows,columns,firstClassRows);
     }
 }
