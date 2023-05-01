@@ -127,7 +127,7 @@ public class Controller  {
         // This "for" is used to insert the heap nodes with K = totalPriority and V = id.
         int totalStandardSections = (int) Math.ceil((getRows()-getRowsFirstClass()) / Math.ceil((getRows()-getRowsFirstClass())/10));
 
-        for (int i = 0; i < passengers.size(); i++) entryOrderPassenger.insert(passengers.get(i).getValue().calculatePriority(totalStandardSections),passengers.get(i).getKey());
+        for (int i = 0; i < passengers.size(); i++) entryOrderPassenger.insert(passengers.get(i).getValue().calculatePriority(getRows()),passengers.get(i).getKey());
 
         //Ordering
 
@@ -137,12 +137,13 @@ public class Controller  {
 
         String chain = "";
 
-        for (int i = 0; i >= 0; i--) {
+
+        for (int i = entryOrderPassenger.getList().size()-1; i >= 0 ; i--) {
 
             Passenger passenger = passengerHashTable.search(entryOrderPassenger.getList().get(i).getValue());
 
             if ( passenger instanceof  StandardPassenger){
-                chain += (entryOrderPassenger.getList().size() - i) + ". ID STAND: " + passenger.getPassengerID() +
+                chain += (entryOrderPassenger.getList().size() -i) + ". ID STAND: " + passenger.getPassengerID() +
                         " | Punctuality: " + ((StandardPassenger) passenger).getPriority().getPunctuality() +
                         " | Distance to center: " +  ((StandardPassenger) passenger).getPriority().getDistanceToCenter() +
                         " | Section: " + ((StandardPassenger) passenger).getPriority().getSection() +
@@ -151,7 +152,7 @@ public class Controller  {
                         "\n";
 
             } else if (passenger instanceof  FirstClassPassenger) {
-                chain += (entryOrderPassenger.getList().size() - i) + ". ID FC: " + passenger.getPassengerID() +
+                chain += (entryOrderPassenger.getList().size() -i) + ". ID FC: " + passenger.getPassengerID() +
                         " | Punctuality: " + ((FirstClassPassenger) passenger).getPriority().getPunctuality() +
                         " | Distance to center: " +  ((FirstClassPassenger) passenger).getPriority().getDistanceToCenter() +
                         " | Section: " + ((FirstClassPassenger) passenger).getPriority().getSection() +
