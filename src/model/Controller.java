@@ -21,6 +21,8 @@ public class Controller  {
         this.rowsFirstClass = rowsFirstClass;
     }
 
+    public Controller() {
+    }
     //Loading
 
     public void load(String path) throws IOException {
