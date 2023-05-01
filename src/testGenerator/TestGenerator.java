@@ -22,11 +22,6 @@ public class TestGenerator {
 
     static ArrayList<String> listOfTickets = new ArrayList<>();
 
-    public static void main(String[] args) {
-
-
-    }
-
     public void createScenario(int rows, int columns, int firstClassRows, int passengersAmount,int totalAmountPassengers, int firstClassPassengersAmount){
 
         double proportion = passengersAmount/totalAmountPassengers;
@@ -59,8 +54,6 @@ public class TestGenerator {
             listOfPassengers.add(passengerToAdd);
         }
 
-        System.out.println(listOfPassengers.size());
-        listOfPassengers.forEach(passenger -> System.out.print(passenger.getPassengerID() + " "));
         try {
             save();
         } catch (IOException e) {

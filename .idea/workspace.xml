@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f37236f4-e85c-4fea-9439-50ac9d12f037" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/data.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/testGenerator/TestGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/testGenerator/TestGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/ControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/ControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,12 +63,34 @@
       <recent name="C:\Users\curac\integradoraCED\src" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.HeapTest.heapSortTest2">
-    <configuration name="HeapTest.buildHeapTestNonOrdered" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ui.Main" />
+      <module name="integrativeTaskCED" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="integrativeTaskCED" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HeapTest" />
-      <option name="METHOD_NAME" value="buildHeapTestNonOrdered" />
+      <option name="MAIN_CLASS_NAME" value="ControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ControllerTest.entrySortDifferentRows" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="integrativeTaskCED" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ControllerTest" />
+      <option name="METHOD_NAME" value="entrySortDifferentRows" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -90,33 +116,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HeapTest.maxHeapifyTestFrom" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="integrativeTaskCED" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HeapTest" />
-      <option name="METHOD_NAME" value="maxHeapifyTestFrom" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HeapTest.maxHeapifyTestFrom2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="integrativeTaskCED" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HeapTest" />
-      <option name="METHOD_NAME" value="maxHeapifyTestFrom2" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.ControllerTest.entrySortDifferentRows" />
+        <item itemvalue="JUnit.ControllerTest" />
         <item itemvalue="JUnit.HeapTest.heapSortTest2" />
         <item itemvalue="JUnit.HeapTest.buildHeapTestOrdered" />
-        <item itemvalue="JUnit.HeapTest.buildHeapTestNonOrdered" />
-        <item itemvalue="JUnit.HeapTest.maxHeapifyTestFrom2" />
-        <item itemvalue="JUnit.HeapTest.maxHeapifyTestFrom" />
       </list>
     </recent_temporary>
   </component>
@@ -134,7 +140,7 @@
       <workItem from="1682262545093" duration="6636000" />
       <workItem from="1682822326779" duration="4664000" />
       <workItem from="1682835600105" duration="2977000" />
-      <workItem from="1682899303880" duration="11671000" />
+      <workItem from="1682899303880" duration="13521000" />
     </task>
     <servers />
   </component>

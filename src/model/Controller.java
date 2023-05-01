@@ -94,7 +94,25 @@ public class Controller  {
 
         for (int i = outputHeap.getList().size() - 1, j = 0; i >= 0; i--){
 
-            chain += (outputHeap.getList().size() - i) + ". " + outputHeap.getList().get(i).getValue() + "\n";
+            Passenger passenger = passengerHashTable.search(outputHeap.getList().get(i).getValue());
+            if ( passenger instanceof  StandardPassenger){
+                chain += (outputHeap.getList().size() - i) + ". ID STAND: " + passenger.getPassengerID() +
+                        " | Punctuality: " + ((StandardPassenger) passenger).getPriority().getPunctuality() +
+                        " | Distance to center: " +  ((StandardPassenger) passenger).getPriority().getDistanceToCenter() +
+                        " | Section: " + ((StandardPassenger) passenger).getPriority().getSection() +
+                        " | Row: " + ((StandardPassenger) passenger).getPriority().getRow() +
+                        " | Overall: " + ((StandardPassenger) passenger).getPriority().getOverallPriority() +
+                        "\n";
+
+            } else if (passenger instanceof  FirstClassPassenger) {
+                chain += (outputHeap.getList().size() - i) + ". ID FC:" + passenger.getPassengerID() +
+                        " | Punctuality: " + ((FirstClassPassenger) passenger).getPriority().getPunctuality() +
+                        " | Distance to center: " +  ((FirstClassPassenger) passenger).getPriority().getDistanceToCenter() +
+                        " | Section: " + ((FirstClassPassenger) passenger).getPriority().getSection() +
+                        " | Row " + ((FirstClassPassenger) passenger).getPriority().getRow() +
+                        " | Overall: " + ((FirstClassPassenger) passenger).getPriority().getOverallPriority() +
+                        "\n";
+            }
         }
 
         return chain;
@@ -119,8 +137,28 @@ public class Controller  {
 
         String chain = "";
 
-        for (int i = entryOrderPassenger.getList().size() - 1; i >= 0; i--) {
-            chain += (entryOrderPassenger.getList().size() - i) + ". " + entryOrderPassenger.getList().get(i).getValue() + "\n";
+        for (int i = 0; i >= 0; i--) {
+
+            Passenger passenger = passengerHashTable.search(entryOrderPassenger.getList().get(i).getValue());
+
+            if ( passenger instanceof  StandardPassenger){
+                chain += (entryOrderPassenger.getList().size() - i) + ". ID STAND: " + passenger.getPassengerID() +
+                        " | Punctuality: " + ((StandardPassenger) passenger).getPriority().getPunctuality() +
+                        " | Distance to center: " +  ((StandardPassenger) passenger).getPriority().getDistanceToCenter() +
+                        " | Section: " + ((StandardPassenger) passenger).getPriority().getSection() +
+                        " | Row: " + ((StandardPassenger) passenger).getPriority().getRow() +
+                        " | Overall: " + ((StandardPassenger) passenger).getPriority().getOverallPriority() +
+                        "\n";
+
+            } else if (passenger instanceof  FirstClassPassenger) {
+                chain += (entryOrderPassenger.getList().size() - i) + ". ID FC: " + passenger.getPassengerID() +
+                        " | Punctuality: " + ((FirstClassPassenger) passenger).getPriority().getPunctuality() +
+                        " | Distance to center: " +  ((FirstClassPassenger) passenger).getPriority().getDistanceToCenter() +
+                        " | Section: " + ((FirstClassPassenger) passenger).getPriority().getSection() +
+                        " | Row " + ((FirstClassPassenger) passenger).getPriority().getRow() +
+                        " | Overall: " + ((FirstClassPassenger) passenger).getPriority().getOverallPriority() +
+                        "\n";
+            }
         }
         return chain;
     }

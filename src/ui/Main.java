@@ -14,6 +14,11 @@ public class Main {
     public static void main(String[] args) {
         init();
         setScenario();
+        System.out.println("Entry Sort: ");
+        System.out.println(controller.entrySort());
+        System.out.println("Output Sort: ");
+
+        System.out.println(controller.outPutOrdering());
     }
     public static void init(){
         testgenerator = new TestGenerator();
@@ -36,5 +41,11 @@ public class Main {
 
         testgenerator.createScenario(rows, columns, firstClassRows, passengersAmount, totalAmountPassengers, firstClassPassengersAmount);
         controller = new Controller(rows,columns,firstClassRows);
+
+        try {
+            controller.load("data/data.txt");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

@@ -97,7 +97,8 @@ public class ControllerTest {
     @Test
     public void entrySortDifferentRows(){
         setUpStage1();
-        System.out.println(controller.entrySort());
+        assertEquals("1. 2\n2. 1\n3. 5\n4. 4\n5. 3",
+                controller.entrySort().trim());
     }
     @Test
     public void entrySortSectionsConflicts(){
