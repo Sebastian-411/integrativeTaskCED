@@ -16,8 +16,8 @@ public class StandardPassenger extends Passenger {
         this.getPriority().setSection(section);
     }
     @Override
-    public double calculatePriority() {
-        return this.priority.calculatePriority();
+    public double calculatePriority(int numSections) {
+        return this.priority.calculatePriority(numSections);
     }
     @Override
     public void establishPunctuality(int totalPassengers, int arrivalOrder) {

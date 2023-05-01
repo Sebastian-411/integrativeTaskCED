@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f37236f4-e85c-4fea-9439-50ac9d12f037" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/out/production/integrativeTaskCED/TestGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/integrativeTaskCED/TestGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/integrativeTaskCED/model/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/integrativeTaskCED/model/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/integrativeTaskCED/model/dataStructure/HashTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/integrativeTaskCED/model/dataStructure/HashTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/integrativeTaskCED/HashTableTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/integrativeTaskCED/HashTableTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testGenerator/TestGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/testGenerator/TestGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/HeapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/HeapTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,68 +34,74 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/curac/integradoraCED/test/dataTest",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
-  <component name="RunManager" selected="JUnit.HashTableTest.deleteAdvancedTest">
-    <configuration name="HashTableTest.delete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\curac\integradoraCED\test\dataTest" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.HeapTest.buildHeapTestOrdered">
+    <configuration name="HeapTest.buildHeapTestNonOrdered" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="integrativeTaskCED" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HashTableTest" />
-      <option name="METHOD_NAME" value="delete" />
+      <option name="MAIN_CLASS_NAME" value="HeapTest" />
+      <option name="METHOD_NAME" value="buildHeapTestNonOrdered" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HashTableTest.deleteAdvancedTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HeapTest.buildHeapTestOrdered" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="integrativeTaskCED" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HashTableTest" />
-      <option name="METHOD_NAME" value="deleteAdvancedTest" />
+      <option name="MAIN_CLASS_NAME" value="HeapTest" />
+      <option name="METHOD_NAME" value="buildHeapTestOrdered" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HashTableTest.insertAdvancedTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HeapTest.maxHeapifyTestFrom" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="integrativeTaskCED" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HashTableTest" />
-      <option name="METHOD_NAME" value="insertAdvancedTest" />
+      <option name="MAIN_CLASS_NAME" value="HeapTest" />
+      <option name="METHOD_NAME" value="maxHeapifyTestFrom" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HashTableTest.searchAdvancedTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HeapTest.maxHeapifyTestFrom2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="integrativeTaskCED" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HashTableTest" />
-      <option name="METHOD_NAME" value="searchAdvancedTest" />
+      <option name="MAIN_CLASS_NAME" value="HeapTest" />
+      <option name="METHOD_NAME" value="maxHeapifyTestFrom2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HashTableTest.searchTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HeapTest.maxHeapifyTestFromEnd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="integrativeTaskCED" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HashTableTest" />
-      <option name="METHOD_NAME" value="searchTest" />
+      <option name="MAIN_CLASS_NAME" value="HeapTest" />
+      <option name="METHOD_NAME" value="maxHeapifyTestFromEnd" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -106,18 +109,18 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.HashTableTest.deleteAdvancedTest" />
-        <item itemvalue="JUnit.HashTableTest.searchAdvancedTest" />
-        <item itemvalue="JUnit.HashTableTest.delete" />
-        <item itemvalue="JUnit.HashTableTest.insertAdvancedTest" />
-        <item itemvalue="JUnit.HashTableTest.searchTest" />
+        <item itemvalue="JUnit.HeapTest.buildHeapTestOrdered" />
+        <item itemvalue="JUnit.HeapTest.buildHeapTestNonOrdered" />
+        <item itemvalue="JUnit.HeapTest.maxHeapifyTestFrom2" />
+        <item itemvalue="JUnit.HeapTest.maxHeapifyTestFrom" />
+        <item itemvalue="JUnit.HeapTest.maxHeapifyTestFromEnd" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="446c0b91-68a2-4696-ba4b-05a39b23695b" name="Changes" comment="" />
+      <changelist id="f37236f4-e85c-4fea-9439-50ac9d12f037" name="Changes" comment="" />
       <created>1682218467657</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -128,6 +131,7 @@
       <workItem from="1682262545093" duration="6636000" />
       <workItem from="1682822326779" duration="4664000" />
       <workItem from="1682835600105" duration="2977000" />
+      <workItem from="1682899303880" duration="9374000" />
     </task>
     <servers />
   </component>
@@ -158,11 +162,28 @@
     </option>
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/HeapTest.java</url>
+          <line>107</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="model.Controller" memberName="columns" />
         <PinnedItemInfo parentTag="model.dataStructure.HashTable" memberName="listOfNodes" />
       </pinned-members>
     </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="heap" language="JAVA" />
+      </configuration>
+      <configuration name="Application">
+        <watch expression="controller.passengerHashTable.listOfNodes" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

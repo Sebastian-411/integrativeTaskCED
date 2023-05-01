@@ -37,8 +37,6 @@ public class Controller  {
             content += line + "\n";
         }
 
-        System.out.println(content);
-
         // Gson with types
 
         Gson gson = new GsonBuilder()
@@ -50,7 +48,13 @@ public class Controller  {
         ArrayList<Passenger> passengersList = new ArrayList<>();
         passengersList.addAll(List.of(passengers));
 
+        //Priorities Staff
+
         establishPriorities(passengersList);
+        sectionCalculationAndAssignment(passengersList);
+
+        //Creating hash table
+
         generatePassengersHasTable(passengersList);
 
     }
@@ -97,11 +101,10 @@ public class Controller  {
         Heap<Double, String> entryOrderPassenger = new Heap<Double, String>();
 
 
-        sectionCalculationAndAssignment(passengers);
-
         // This "for" is used to insert the heap nodes with K = totalPriority and V = id.
+        int totalStandardSections = (int) Math.ceil((getRows()-getRowsFirstClass()) / Math.ceil((getRows()-getRowsFirstClass())/10));
 
-        for (int i = 0; i < passengers.size(); i++) entryOrderPassenger.insert(passengers.get(i).getValue().calculatePriority(),passengers.get(i).getKey());
+        for (int i = 0; i < passengers.size(); i++) entryOrderPassenger.insert(passengers.get(i).getValue().calculatePriority(totalStandardSections),passengers.get(i).getKey());
 
         //Ordering
 
@@ -119,20 +122,21 @@ public class Controller  {
 
     //Priorities staff
 
-    private void sectionCalculationAndAssignment(ArrayList<HashNode<String,Passenger>> passengers){
+    public void sectionCalculationAndAssignment(ArrayList<Passenger> passengers){
 
         // Section Calculation.
-        double sectionFirstClass = Math.ceil(getRowsFirstClass() / 10);
-        double sectionStandardClass = Math.ceil((getRows()-getRowsFirstClass())/10);
+
+        double sectionFirstClass = Math.ceil( (double) getRowsFirstClass() / 10);
+        double sectionStandardClass = Math.ceil((double) (getRows()-getRowsFirstClass())/10);
 
         //      This "for" is used to assign a section value for each passenger depending on its type, first class or Standard.
         for (int i = 0; i < passengers.size(); i++) {
-            if (passengers.get(i).getValue() instanceof FirstClassPassenger){
+            if (passengers.get(i) instanceof FirstClassPassenger){
 
-                passengers.get(i).getValue().setSection((int) sectionFirstClass);
+                passengers.get(i).setSection((int) sectionFirstClass);
 
-            } else if (passengers.get(i).getValue() instanceof StandardPassenger) {
-                passengers.get(i).getValue().setSection((int) sectionStandardClass);
+            } else if (passengers.get(i) instanceof StandardPassenger) {
+                passengers.get(i).setSection((int) sectionStandardClass);
             }
         }
     }
@@ -158,7 +162,7 @@ public class Controller  {
      * @return An arraylist with  the passengers.
      */
 
-    private ArrayList<HashNode<String,Passenger>> elementList(){
+    public ArrayList<HashNode<String,Passenger>> elementList(){
         ArrayList<HashNode<String,Passenger>> elements = new ArrayList<>();
         for (int i = 0; i < getPassengerHashTable().getListOfNodes().length; i++) {
             if (getPassengerHashTable().getListOfNodes()[i] != null){
@@ -179,7 +183,6 @@ public class Controller  {
         for (int i = 0; i < passengers.size(); i++) {
             this.passengerHashTable.insert(passengers.get(i).getPassengerID(),passengers.get(i));
         }
-        System.out.println(passengerHashTable.print());
     }
 
 
