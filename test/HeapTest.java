@@ -152,7 +152,7 @@ public class HeapTest {
         assertEquals("12 5 6", chain.trim());
     }
     @Test
-    public void heapSortTest(){
+    public void heapSortTest1(){
         setUpStage4();
         heap.heapSort();
         String chain= "";
@@ -161,5 +161,17 @@ public class HeapTest {
             chain+=node.getKey() + " ";
         }
         assertEquals("1 2 3 4 7 8 9 10 14 16", chain.trim());
+    }
+
+    @Test
+    public void heapSortTest2(){
+        setUpStage5();
+        heap.heapSort();
+        String chain= "";
+        for (HeapNode node: heap.getList()
+        ) {
+            chain+=node.getKey() + " ";
+        }
+        assertEquals("5 9 10 15", chain.trim());
     }
 }

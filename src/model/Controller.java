@@ -90,7 +90,10 @@ public class Controller  {
 
         String chain = "";
 
-        for (int i = outputHeap.getList().size() - 1, j = 0; i >= 0; i--) chain += (outputHeap.getList().size() - i) + ". " + outputHeap.getList().get(i).getValue() + "\n";
+        for (int i = outputHeap.getList().size() - 1, j = 0; i >= 0; i--){
+
+            chain += (outputHeap.getList().size() - i) + ". " + outputHeap.getList().get(i).getValue() + "\n";
+        }
 
         return chain;
     }
